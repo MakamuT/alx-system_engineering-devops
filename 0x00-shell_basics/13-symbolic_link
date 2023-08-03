@@ -1,2 +1,2 @@
 #!/bin/bash
-ln -s __ls_ link to 0x00-shell_basics_
+ln -s /__ls__ link to 0x00-shell_basics
