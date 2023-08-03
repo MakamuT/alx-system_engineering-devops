@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo chown -R alx-system_engineering-devops/
+sudo chown betty
