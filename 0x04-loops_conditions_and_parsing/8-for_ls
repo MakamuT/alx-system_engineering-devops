@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+#displays content of current directory in list format
+
+for files in *
+do
+	if [ -f "$files" ] && [[ "$files" != .* ]]
+	then
+		basename=${files#*-}
+		echo "$basename"
+	fi
+done
