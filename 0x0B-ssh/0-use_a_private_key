@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# connects to ubuntu using private key
+
+private_keys="~/.ssh/school"
+username="ubuntu"
+server_ip ="52.23.222.248"
+
+ssh -i "$private_key" "$username@$server_ip"
