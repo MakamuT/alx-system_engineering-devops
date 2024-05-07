@@ -8,7 +8,7 @@
 #new Ubuntu machine to respect above requirements
 
 echo -e "Updating and installing Nginx.\n"
-sudo ap-get update -y -qq && \
+sudo apt-get update -y -qq && \
 	sudo apt-get install nginx -y
 
 echo -e "\nSetting up some minor stuff.\n"
