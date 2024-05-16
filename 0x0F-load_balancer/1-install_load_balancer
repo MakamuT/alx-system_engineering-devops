@@ -31,11 +31,11 @@ server_config=\
 	 timeout server 15s
 	 timeout http-request 10s
 
-frontend clickviral-tech-frontend
+frontend thembi-tech-frontend
 	bind *:80
-	default_backend clickviral-tech-backend
+	default_backend thembi-tech-backend
 
-backend clickviral-tech-backend
+backend thembi-tech-backend
 	balance roundrobin
 	server 151666-web-01 52.23.222.248:80 check
 	server 151666-web-02 54.157.130.207:80 check
