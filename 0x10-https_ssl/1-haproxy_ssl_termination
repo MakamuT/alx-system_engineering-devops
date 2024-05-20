@@ -41,7 +41,7 @@ frontend thembi-frontend
         default_backend thembi-backend
 
 frontend thembi-frontend-https
-        bind *:443 ssl crt /etc/haproxy/certs/thembi.tech.pem
+        bind *:443 ssl crt /etc/haproxy/certs/www.thembisilemakamu.tech.pem
         http-request set-header X-Forwarded-Proto https
         default_backend thembi-backend
 
