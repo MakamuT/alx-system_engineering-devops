@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+echo -e "Updating\n"
+
+sudo apt-get update
+echo -e "Installing UFW\n"
+
+sudo apt-get installing -y ufw
+
+echo -e "Configuring UFW...\n"
+
+sudo ufw deffault deny incoming
+sudo ufw default allow outgoing
+
+sudo ufw allow 22
+sudo ufw allow 80
+sudo ufw allow 443
+
+sudo ufw enable
+
+echo -e "Process Completed.\n"
