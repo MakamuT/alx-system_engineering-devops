@@ -6,19 +6,32 @@ import requests
 import sys
 
 if __name__ == '__main__':
-    user = sys.argv[1]
-    url_user = 'https://jsonplaceholder.typicode.com/users/' + user
-    res = requests.get(url_user)
+    if len(sys.argv) < 2:
+        print("Usage: {} <user_id>".format(sys.argv])
+        sys.exit(1)
 
-    user_name = res.json().get('username')
-    task = url_user + '/todos'
-    res = request.get(task)
-    tasks = res.json()
+    user_id = sys.argv[1]
+    url_user = f'https://jsonplaceholder.typicode.com/users/{user_id}'
+    res_user = requests.get(url_user)
 
-    with open('{}.csv'.format(user), 'w') as csvfile:
-      for task in tasks:
-          completed = task.get('completed')
+    if res_user.status_code != 200:
+        print("User not found")
+        sys.exit(1)
 
-          title_task = task.get('title')
-          csvfile.write('"{}","{}","{}","{}\n'.format(
-              user, user_name, completed, title_task))
+    user_name = res_user.json().get('username')
+    url_tasks = f'{url_user}/todos'
+    res_tasks = requests.get(url_tasks)
+
+    if res_tasks.status_code != 200:
+        print("Error fetching tasks")
+        sys.exit(1)
+
+    tasks = res_tasks.json()
+
+    csv_filename = f'{user_id}.csv'
+    with open(csv_filename, 'w', newline='') as csvfile:
+        csv_writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
+        for task in tasks:
+            completed = task.get('completed')
+            title_task = task.get('title')
+            csv_writer.writerow([user_id, user_name, completed, title_task])
