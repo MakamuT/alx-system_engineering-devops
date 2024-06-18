@@ -3,7 +3,8 @@
 
 import requests
 
-def num_of_subscribers:
+
+def number_of_subscribers(subreddit):
    """total subscribers"""
    url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
    headers = "{Users-Agent": "Mozilla/5.0"}
