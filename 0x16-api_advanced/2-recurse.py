@@ -23,9 +23,16 @@ def recurse(subreddit, hot_list=[], after="", count=0):
     if response.status_code == 404:
         return None
 
-    results = response.json().get("data")
+    try:
+        results = response.json().get("data")
+    except ValueError:
+        print("Error: Invalid JSON response")
+        print("Response content:", response.content)
+        return None
+
     after = results.get("after")
     count += reaults.get("dist")
+
     for c in results.get("children"):
         hot_list.append(c.get("data").get("title"))
 
