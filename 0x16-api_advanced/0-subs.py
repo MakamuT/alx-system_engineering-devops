@@ -7,7 +7,7 @@ import requests
 
 
 def number_of_subscribers(subreddit):
-"""total number of subscribers"""
+    """total number of subscribers"""
     url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
     headers = {
         "User-Agent": "0x16-api_advanced:project:v1.0.0 (by /u/firdaus_cartoon_jr)"
