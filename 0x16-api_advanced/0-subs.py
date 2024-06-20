@@ -22,3 +22,12 @@ def number_of_subscribers(subreddit):
         return data.get("subscribers", 0)
     except (ValueError, AttributeError):
         return 0
+
+if __name__ == "__main__":
+    import sys
+    if len(sys.argv) < 2:
+        print("Usage: {} subreddit".format(sys.argv[0]))
+    else:
+        subscribers = number_of_subscribers(sys.argv[1])
+        if subscribers >= 0:
+            print("OK")
