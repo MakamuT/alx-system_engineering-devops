@@ -10,10 +10,13 @@ import requests
 
 def top_ten(subreddit):
     """return top ten posts"""
-    user = {'User-Agent': 'Lizzie'}
+    headers = {
+        'User-Agent': 'Mozilla/5.0',
+        'Accept': 'application/json',
+    }
     url = 'https://www.reddit.com/r/{}/hot/.json?limit=10'.format(subreddit)
     try:
-        response = requests.get(url, headers=user)
+        response = requests.get(url, headers=headers)
         response.raise_for_status()
         posts = response.json()
         for post in posts.get('data', {}).get('children', []):
