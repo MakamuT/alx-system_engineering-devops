@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+#configures Nginx to listen on :80
+
+#remove default config file
+rm /etc/nginx/sites-enabled/default
+
+#configures nginx to listen on :80 for active IPs
+ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/defaults
+
+#restart nginx
+sudo service restart

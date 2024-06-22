@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#configures Nginx to listen on :80
+
+ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/defaults
+
+#start nginx
+sudo service start
+
+#terminates the first nginx PID
+kill "$(pgrep 'nginx' | head -1)"
