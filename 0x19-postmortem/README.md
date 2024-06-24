@@ -4,7 +4,7 @@ Impact: Users encountered slow page loading times and occcasional 503 errors. Th
 Root cause: The load balancer settings were not configured properly leading to excessive connections to overload some frontend servers.
 
 Timeline:
-	11:45 GMT: The issue was detected through the errors in the frontend responses as 	  well as monitoring alerts.
+	11:45 GMT: The issue was detected through the errors in the frontend responses as well as monitoring alerts.
 	12:00 GMT: Investigation took place in order to find the problem.Due to schema
 	updates it was suspected that issue could be within the database.
 	13:30 GMT: After countless attempts to solve an issue with the database engineers
@@ -26,7 +26,6 @@ Resolution Details: In order to solve the problem, engineers pulled the recent c
 
 Corrective and Preventative Measures:
 Improvements:
-	    Change the management procedures for complex infrastrature componente to minimize 	         misconfigurations.
+	    Change the management procedures for complex infrastrature componente to minimize misconfigurations.
 	    Enhance the monitoring capabilities so that it detects abnormalities in traffic 
 	    patterns.
-
